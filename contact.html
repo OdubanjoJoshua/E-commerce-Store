@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleek Store | Contact Page</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+        
+    <!-- This is the Navigation area -->
+    <header>
+        <div class="nav">
+            <input type="checkbox" id="nav-check">
+            <div class="nav-header">
+                <div class="nav-left">
+                    <img src="/images/Logo/Logo.png" alt="" width="70px" height="70px">
+                    <h1>Sleek</h1>
+                </div>
+            </div>
+            <div class="nav-btn">
+            <label for="nav-check">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            </div>
+            
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="/store.html">Store</a>
+                <a href="contact.html">Contact</a>
+                <a href="about.html">About</a>
+                <a href="signin.html">Login</a>
+            </div>
+        </div>
+    </header> 
+
+
+    <!-- This is the content area of the contact page-->
+    <section class="contact">
+        <!-- This is the wrapper for the section content -->
+        <div class="contact-wrapper">
+            <!-- The form section for the contact -->
+            <div class="contact-left">
+                <div class="contact-container">
+                    <!-- The form for the contact -->
+                    <h3 class="contact-form-title">Tells Us Your Message</h3>
+                    <div class="contact-form">
+                        <form action="{% url 'contact' %}" method="post"> 
+                            <div class="form-group">
+                                <label for="">Your Name<span class="required">*</span></label>
+                                <input type="text" name="full_name" id="customerName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Your Email<span class="required">*</span></label>
+                                <input type="email" name="email" id="customerEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Your Message<span class="required">*</span></label>
+                                <textarea name="message" id="contactMessage"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="submit" value="submit" id="submit" name="submit">Send</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div><!-- end of contact left -->
+        
+        
+            <!-- The info about the contact -->
+            <div class="contact-right">
+                <div class="container">
+                    <!-- The direct wrapper for the contents in contact-right -->
+                    <div class="contact-box">
+                        <h3>Contact Us</h3>
+                        <p>We also have a physical store. That is what we started with before opening our online store making it easier for people to get the products they desire. But if we are closer to your location, you can decide to drop by and get your lovely accessories and outfits.</p>
+                        <div class="single-contact-block">
+                            <h4><i class="fa fa-fax"></i> Address</h4>
+                            <p>No 20, Owolabi Estate, Lagos, Nigeria.</p>
+                        </div>
+                        <div class="single-contact-block">
+                            <h4><i class="fa fa-phone"></i> Phone</h4>
+                            <p>Mobile: (+234) 904-572-8937</p>
+                            <p>Hotline: 0700-110-0110</p>
+                        </div>
+                        <div class="single-contact-block">
+                            <h4><i class="fa-solid fa-envelope"></i> Email</h4>
+                            <p>JohnDoe@youremail.com</p>
+                            <p>support@sleek.company</p>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- End of the contact info -->
+        </div> <!-- This is the end of the wrapper -->
+    </section>
+
+
+<!-- This is the footer and Copyright area -->
+<footer>
+    <!-- Width of the footer area -->
+    <div class="box">
+        <div class="footer-top">
+            <div class="ft-col">
+                <div class="ft-col-1">
+                    <div class="sleek-content">
+                        <div class="sleek-img">
+                            <img src="images/Logo/Logo.png" alt="" width="70px" height="70px">
+                            <h1>Sleek</h1>
+                        </div>
+                        <ul>
+                            <li><span>ADDRESS:</span> No 20, Owolabi Estate, Lagos, Nigeria. </li>
+                            <li><span>PHONE:</span> (+234) 7055434671</li>
+                            <li><span>E-MAIL:</span> joshuaodubanjo13@gmail.com</li>
+                            <li><span>POSTAL CODE:</span> 100275</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ft-col-2">
+                    <div class="sleek-details">
+                        <h3>Our Company</h3>
+                        <ul class="sleek-menu">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Location</a></li>
+                            <li><a href="#">Portfolio</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ft-col-3">
+                    <div class="sleek-details">
+                        <h3>Menu</h3>
+                        <ul class="sleek-menu">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="/store.html">Store</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="signin.html">Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ft-col-4">
+                    <div class="sleek-details">
+                        <h3>Follow Us</h3>
+                        <ul class="sleek-menu diff">
+                            <li class="twitter"><a href="https://twitter.com/Tms_4life" target="_blank"><p>Twitter</p> <i class="fa-brands fa-twitter"></i></a></li>
+                            <li class="instagram"><a href="https://www.instagram.com/joshuaodubanjo/" target="_blank"><p>Instagram</p> <i class="fa-brands fa-instagram"></i></a></li>
+                            <li class="facebook"><a href="https://web.facebook.com/joshua.odubanjo/" target="_blank"><p>Facebook</p> <i class="fa-brands fa-facebook"></i></a></li>
+                            <li class="github"><a href="https://github.com/OdubanjoJoshua" target="_blank"><p>Github</p> <i class="fa-brands fa-github"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2023 Sleek Store designed by <a href="https://www.linkedin.com/in/joshua-odubanjo-78133623a/" target="_blank">Joshua Odubanjo</a></p>
+        </div>
+    </div>
+</footer><!-- End of the footer and Copyright area -->
+
+</body>
+</html>
