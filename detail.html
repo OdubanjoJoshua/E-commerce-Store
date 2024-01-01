@@ -1,51 +1,133 @@
-{% extends 'base.html' %}
-{% load humanize %}
-{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleek Store | Register Page</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+        
+<!-- This is the Navigation area -->
+<header>
+    <div class="nav">
+        <input type="checkbox" id="nav-check">
+        <div class="nav-header">
+            <div class="nav-left">
+                <img src="/images/Logo/Logo.png" alt="" width="70px" height="70px">
+                <h1>Sleek</h1>
+            </div>
+        </div>
+        <div class="nav-btn">
+        <label for="nav-check">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        </div>
+        
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="store.html">Store</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About</a>
+            <a href="signin.html">Login</a>
+        </div>
+    </div>
+</header> 
 
 
-{% block header %}
-{% include 'header.html' %}
-{% endblock header %}
-
-{% block content %}
-    
 <main class="main-detail">
     <div class="detail-row">
         <div class="detail-row-left">
-            <img class="detail-row-main-img" src="{{detail.pics.url}}" alt="">
+            <img class="detail-row-main-img" src="images/Women/gowns/1.png" alt="">
         </div>
         <div class="detail-row-right">
             <!-- product title -->
-            <h2>{{detail.title}}</h2>
-            <h3>&#8358;{{detail.price|floatformat:2|intcomma}}</h3>
-            {% if user.is_authenticated %}
-            <form action="{% url 'add_to_cart' %}" method="POST">
-            {% csrf_token %}
+            <h2>Women Purple Gown</h2>
+            <h3>&#8358;50,000</h3>
+            <form action="" method="POST">
                 <select name="pick_size" style="margin-bottom: 5px;">
                     <option>Select Size</option>
                     <option value="Small">Small</option>
                     <option value="Large">Large</option>
                     <option value="X-Large">X-Large</option>
                 </select>
-                <input type="hidden" name="storeid" value="{{detail.id}}">
                 <input type="hidden" name="qty" value="1">
-                <button type="submit">Buy Now</button>
+                <button type="" disabled>Buy Now</button>
             </form>
-            {% else %}
-                <a href="{% url 'signin' %}"><button type="submit">Add to Cart</button></a>
-            {% endif %}
             
             <h4>Product Details</h4>
-            <p>{{detail.details}}</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum vero et harum voluptatibus, distinctio consectetur. Perspiciatis enim distinctio unde repellat expedita sint laudantium obcaecati dolores illum repudiandae at, dolor vero magni porro quia praesentium, recusandae nesciunt, necessitatibus veritatis atque modi?
+            </p>
         </div>
     </div>
 </main>
 
 
+<!-- This is the footer and Copyright area -->
+<footer>
+    <!-- Width of the footer area -->
+    <div class="box">
+        <div class="footer-top">
+            <div class="ft-col">
+                <div class="ft-col-1">
+                    <div class="sleek-content">
+                        <div class="sleek-img">
+                            <img src="images/Logo/Logo.png" alt="" width="70px" height="70px">
+                            <h1>Sleek</h1>
+                        </div>
+                        <ul>
+                            <li><span>ADDRESS:</span> No 20, Owolabi Estate, Lagos, Nigeria. </li>
+                            <li><span>PHONE:</span> (+234) 7055434671</li>
+                            <li><span>E-MAIL:</span> joshuaodubanjo13@gmail.com</li>
+                            <li><span>POSTAL CODE:</span> 100275</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ft-col-2">
+                    <div class="sleek-details">
+                        <h3>Our Company</h3>
+                        <ul class="sleek-menu">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Location</a></li>
+                            <li><a href="#">Portfolio</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ft-col-3">
+                    <div class="sleek-details">
+                        <h3>Menu</h3>
+                        <ul class="sleek-menu">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="/store.html">Store</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="signin.html">Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ft-col-4">
+                    <div class="sleek-details">
+                        <h3>Follow Us</h3>
+                        <ul class="sleek-menu diff">
+                            <li class="twitter"><a href="https://twitter.com/Tms_4life" target="_blank"><p>Twitter</p> <i class="fa-brands fa-twitter"></i></a></li>
+                            <li class="instagram"><a href="https://www.instagram.com/joshuaodubanjo/" target="_blank"><p>Instagram</p> <i class="fa-brands fa-instagram"></i></a></li>
+                            <li class="facebook"><a href="https://web.facebook.com/joshua.odubanjo/" target="_blank"><p>Facebook</p> <i class="fa-brands fa-facebook"></i></a></li>
+                            <li class="github"><a href="https://github.com/OdubanjoJoshua" target="_blank"><p>Github</p> <i class="fa-brands fa-github"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2023 Sleek Store designed by <a href="https://www.linkedin.com/in/joshua-odubanjo-78133623a/" target="_blank">Joshua Odubanjo</a></p>
+        </div>
+    </div>
+</footer><!-- End of the footer and Copyright area -->
 
-{% endblock content %}
-
-{% block footer %}
-{% include 'footer.html' %}
-{% endblock footer %}
-
+</body>
+</html>
